@@ -1,12 +1,17 @@
+// Flutter imports:
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:momentum/momentum.dart';
+import 'package:relative_scale/relative_scale.dart';
+
+// Project imports:
+import '../models/metadata.dart' as m;
 import 'package:anime_twist/src/components/search/index.dart';
 import 'package:anime_twist/src/models/index.dart';
 import 'package:anime_twist/src/pages/details.dart';
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:relative_scale/relative_scale.dart';
-import '../models/metadata.dart' as m;
-import 'package:momentum/momentum.dart';
 
 class TopRatedPageView extends StatefulWidget {
   const TopRatedPageView({

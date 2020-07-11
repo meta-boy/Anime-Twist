@@ -1,5 +1,7 @@
+// Package imports:
 import 'package:momentum/momentum.dart';
 
+// Project imports:
 import 'index.dart';
 
 class DetailModel extends MomentumModel<DetailController> {

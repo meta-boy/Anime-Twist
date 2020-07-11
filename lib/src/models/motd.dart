@@ -2,6 +2,7 @@
 //
 //     final motd = motdFromJson(jsonString);
 
+// Dart imports:
 import 'dart:convert';
 
 Motd motdFromJson(String str) => Motd.fromJson(json.decode(str));

@@ -2,6 +2,7 @@
 //
 //     final metaData = metaDataFromJson(jsonString);
 
+// Dart imports:
 import 'dart:convert';
 
 MetaData metaDataFromJson(String str) => MetaData.fromJson(json.decode(str));

@@ -1,10 +1,11 @@
-import 'package:anime_twist/src/components/misc/index.dart';
-import 'package:anime_twist/src/models/index.dart';
-import 'package:anime_twist/src/pages/details.dart';
-import 'package:anime_twist/src/services/index.dart';
+// Package imports:
 import 'package:momentum/momentum.dart';
 
+// Project imports:
 import 'index.dart';
+import 'package:anime_twist/src/components/misc/index.dart';
+import 'package:anime_twist/src/models/index.dart';
+import 'package:anime_twist/src/services/index.dart';
 
 class SearchController extends MomentumController<SearchModel> {
   List<Anime> animeList;

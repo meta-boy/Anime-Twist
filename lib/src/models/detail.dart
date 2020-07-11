@@ -2,6 +2,7 @@
 //
 //     final animeDetail = animeDetailFromJson(jsonString);
 
+// Dart imports:
 import 'dart:convert';
 
 AnimeDetail animeDetailFromJson(String str) => AnimeDetail.fromJson(json.decode(str));

@@ -1,23 +1,26 @@
-import 'package:anime_twist/src/components/detail/detail.controller.dart';
-import 'package:anime_twist/src/components/favourite/favourite.controller.dart';
-import 'package:anime_twist/src/components/misc/misc.controller.dart';
-import 'package:anime_twist/src/components/search/search.controller.dart';
-import 'package:anime_twist/src/components/theme/index.dart';
-import 'package:anime_twist/src/services/anime_twist.dart';
-import 'package:device_preview/device_preview.dart';
+// Flutter imports:
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:device_preview/device_preview.dart';
 import 'package:momentum/momentum.dart';
 
+// Project imports:
+import '.env.dart';
+import 'src/components/detail/detail.controller.dart';
+import 'src/components/favourite/favourite.controller.dart';
+import 'src/components/misc/misc.controller.dart';
+import 'src/components/search/search.controller.dart';
+import 'src/components/theme/index.dart';
 import 'src/pages/index.dart';
+import 'src/services/anime_twist.dart';
 import 'src/services/client_db.dart';
 import 'src/widgets/index.dart';
-import '.env.dart';
 
 const env = environment;
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // await FlutterConfig.loadEnvVariables();
   runApp(
     DevicePreview(
       enabled: !kReleaseMode,

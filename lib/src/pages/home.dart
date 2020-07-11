@@ -1,12 +1,17 @@
+// Flutter imports:
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:momentum/momentum.dart';
+import 'package:relative_scale/relative_scale.dart';
+
+// Project imports:
 import 'package:anime_twist/src/components/misc/index.dart';
 import 'package:anime_twist/src/components/search/index.dart';
 import 'package:anime_twist/src/pages/settings.dart';
 import 'package:anime_twist/src/utils/index.dart';
 import 'package:anime_twist/src/widgets/index.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:momentum/momentum.dart';
-import 'package:relative_scale/relative_scale.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -170,7 +175,7 @@ class _HomeState extends State<Home> with RelativeScale {
           var animeList = _miscController.model.animeList;
           var topRated = _miscController.model.topRated;
           var topAired = _miscController.model.topAiring;
-          var motd = _miscController.model.motd;
+          // var motd = _miscController.model.motd;
           return !_searchController.model.isSearching
               ? CustomScrollView(
                   controller: scrollController,

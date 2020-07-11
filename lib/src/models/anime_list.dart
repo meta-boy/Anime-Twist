@@ -1,7 +1,10 @@
+// Dart imports:
 import 'dart:convert';
 
+// Package imports:
 import 'package:equatable/equatable.dart';
 
+// Project imports:
 import 'index.dart';
 
 List<Anime> animeFromJson(String str) =>
@@ -10,6 +13,7 @@ List<Anime> animeFromJson(String str) =>
 String animeToJson(List<Anime> data) =>
     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
+// ignore: must_be_immutable
 class Anime extends Equatable {
   Anime({
     this.id,

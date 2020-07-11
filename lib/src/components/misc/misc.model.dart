@@ -1,11 +1,10 @@
-import 'dart:convert';
-
+// Package imports:
 import 'package:momentum/momentum.dart';
 
+// Project imports:
+import 'index.dart';
 import 'package:anime_twist/src/models/anime_list.dart';
 import 'package:anime_twist/src/models/index.dart';
-
-import 'index.dart';
 
 class MiscModel extends MomentumModel<MiscController> {
   MiscModel(

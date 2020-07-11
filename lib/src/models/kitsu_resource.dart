@@ -2,8 +2,10 @@
 //
 //     final kitsuResource = kitsuResourceFromJson(jsonString);
 
+// Dart imports:
 import 'dart:convert';
 
+// Project imports:
 import 'index.dart';
 
 KitsuResource kitsuResourceFromJson(String str) => KitsuResource.fromJson(json.decode(str));
