@@ -1,9 +1,14 @@
+// Flutter imports:
+import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:momentum/momentum.dart';
+import 'package:relative_scale/relative_scale.dart';
+
+// Project imports:
 import 'package:anime_twist/src/components/theme/index.dart';
 import 'package:anime_twist/src/utils/color.dart';
 import 'package:anime_twist/src/widgets/index.dart';
-import 'package:flutter/material.dart';
-import 'package:momentum/momentum.dart';
-import 'package:relative_scale/relative_scale.dart';
 
 class Settings extends StatefulWidget {
   @override

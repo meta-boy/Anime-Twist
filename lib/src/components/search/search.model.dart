@@ -1,7 +1,9 @@
-import 'package:anime_twist/src/models/index.dart';
+// Package imports:
 import 'package:momentum/momentum.dart';
 
+// Project imports:
 import 'index.dart';
+import 'package:anime_twist/src/models/index.dart';
 
 class SearchModel extends MomentumModel<SearchController> {
   SearchModel(SearchController controller, {this.isSearching, this.query, this.results}) : super(controller);

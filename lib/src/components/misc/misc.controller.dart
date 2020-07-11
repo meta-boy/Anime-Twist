@@ -1,8 +1,10 @@
-import 'package:anime_twist/src/models/index.dart';
-import 'package:anime_twist/src/services/anime_twist.dart';
+// Package imports:
 import 'package:momentum/momentum.dart';
 
+// Project imports:
 import 'index.dart';
+import 'package:anime_twist/src/models/index.dart';
+import 'package:anime_twist/src/services/anime_twist.dart';
 
 class MiscController extends MomentumController<MiscModel> {
   @override

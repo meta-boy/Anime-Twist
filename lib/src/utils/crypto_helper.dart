@@ -1,12 +1,15 @@
+// Dart imports:
 import 'dart:convert';
-import 'dart:io';
 import 'dart:math';
 import 'dart:typed_data';
-import 'package:anime_twist/main.dart';
+
+// Package imports:
 import 'package:crypto/crypto.dart';
-import 'package:tuple/tuple.dart';
 import 'package:encrypt/encrypt.dart' as encrypt;
-import 'package:yaml/yaml.dart';
+import 'package:tuple/tuple.dart';
+
+// Project imports:
+import 'package:anime_twist/main.dart';
 
 String encryptAESCryptoJS(String plainText, String passphrase) {
   try {
@@ -55,7 +58,6 @@ Tuple2<Uint8List, Uint8List> deriveKeyAndIV(String passphrase, Uint8List salt) {
   Uint8List preHash = Uint8List(0);
 
   while (!enoughBytesForKey) {
-    int preHashLength = currentHash.length + password.length + salt.length;
     if (currentHash.length > 0)
       preHash = Uint8List.fromList(currentHash + password + salt);
     else

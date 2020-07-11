@@ -1,10 +1,14 @@
+// Dart imports:
 import 'dart:convert';
 
+// Package imports:
+import 'package:http/http.dart' as http;
+import 'package:momentum/momentum.dart';
+
+// Project imports:
 import 'package:anime_twist/src/models/index.dart';
 import 'package:anime_twist/src/models/metadata.dart';
 import 'package:anime_twist/src/models/user.dart';
-import 'package:momentum/momentum.dart';
-import 'package:http/http.dart' as http;
 
 abstract class ApiRepository {
   Future<List<Anime>> getAllAnime();

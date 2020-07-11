@@ -1,10 +1,15 @@
+// Flutter imports:
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:momentum/momentum.dart';
+
+// Project imports:
 import 'package:anime_twist/src/components/search/index.dart';
 import 'package:anime_twist/src/models/index.dart';
 import 'package:anime_twist/src/pages/details.dart';
 import 'package:anime_twist/src/utils/color.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:momentum/momentum.dart';
 
 class AnimeListCardItem extends StatefulWidget {
   const AnimeListCardItem({

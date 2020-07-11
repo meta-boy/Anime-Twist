@@ -1,6 +1,8 @@
-
-import 'package:anime_twist/src/models/theme.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Project imports:
+import 'package:anime_twist/src/models/theme.dart';
 
 class HeadingText extends StatelessWidget {
   const HeadingText({
