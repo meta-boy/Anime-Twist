@@ -1,3 +1,3 @@
-main(List<String> args) {
+main() {
   //empty for now
 }
