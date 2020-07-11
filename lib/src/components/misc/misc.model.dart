@@ -1,0 +1,61 @@
+import 'dart:convert';
+
+import 'package:momentum/momentum.dart';
+
+import 'package:anime_twist/src/models/anime_list.dart';
+import 'package:anime_twist/src/models/index.dart';
+
+import 'index.dart';
+
+class MiscModel extends MomentumModel<MiscController> {
+  MiscModel(
+    MiscController controller, {
+    this.animeList,
+    this.topAiring,
+    this.topRated,
+    this.motd
+  }) : super(controller);
+
+  final List<Anime> animeList;
+  final MetaData topAiring;
+  final MetaData topRated;
+  final Motd motd;
+
+  @override
+  void update({
+    List<Anime> animeList,
+    MetaData topAiring,
+    MetaData topRated,
+    Motd motd
+  }) {
+    MiscModel(
+      controller,
+      animeList: animeList ?? this.animeList,
+      topAiring: topAiring ?? this.topAiring,
+      topRated: topRated ?? this.topRated,
+      motd: motd ?? this.motd,
+    ).updateMomentum();
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'animeList': animeList?.map((x) => x?.toJson())?.toList(),
+      'topAiring': topAiring?.toJson(),
+      'topRated': topRated?.toJson(),
+      'motd': motd?.toJson(),
+    };
+  }
+
+  MiscModel fromJson(Map<String, dynamic> map) {
+    if (map == null) return null;
+
+    return MiscModel(
+      controller,
+      animeList:
+          List<Anime>.from(map['animeList']?.map((x) => Anime.fromJson(x))),
+      topAiring: MetaData.fromJson(map['topAiring']),
+      topRated: MetaData.fromJson(map['topRated']),
+      motd: Motd.fromJson(map['motd']),
+    );
+  }
+}
