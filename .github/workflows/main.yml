@@ -31,7 +31,7 @@ jobs:
     - shell: bash
       env:
         ANIME_TWIST_SECRET: ${{ secrets.ANIME_TWIST_SECRET }}
-    - run: dart tools/env_from_cli.dart $ANIME_TWIST_SECRET
+      run: dart tools/env_from_cli.dart $ANIME_TWIST_SECRET
       
     # Get flutter dependencies.
     - run: flutter pub get
