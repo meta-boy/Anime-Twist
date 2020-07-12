@@ -28,7 +28,7 @@ jobs:
         # flutter-version: '1.12.x' # you can also specify exact version of flutter
     
     # Generate env file
-    - run: dart tools/env.dart
+    - run: dart tools/env_from_cli.dart ${{ secrets.ANIME_TWIST_SECRET }}
       
     # Get flutter dependencies.
     - run: flutter pub get
