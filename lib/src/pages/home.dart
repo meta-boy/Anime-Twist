@@ -1,4 +1,5 @@
 // Flutter imports:
+import 'package:anime_twist/src/pages/settings.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -152,12 +153,9 @@ class _HomeState extends State<Home> with RelativeScale {
           IconButton(
             icon: Icon(Icons.settings),
             onPressed: () {
-              // Navigator.push(
-              //     context, CupertinoPageRoute(builder: (_) => Settings()));
-              // _miscController.testInit();
-              // print(DateTime(2000)
-              //     .difference(DateTime.now())
-              //     .compareTo(Duration(seconds: 1)));
+              Navigator.push(
+                  context, CupertinoPageRoute(builder: (_) => Settings()));
+              
             },
           )
         ],

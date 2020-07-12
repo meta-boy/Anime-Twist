@@ -95,6 +95,5 @@ String decryptSourceUrl(String sourceUrl) {
   
   var decrypt =
       decryptAESCryptoJS(sourceUrl, env['secret_key']);
-  print(decrypt);
   return Uri.parse('https://twistcdn.bunny.sh' + decrypt).toString();
 }

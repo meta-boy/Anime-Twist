@@ -81,6 +81,7 @@ class _TopRatedPageViewState extends MomentumState<TopRatedPageView> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
+                        Expanded(child: Container(),),
                         ClipRRect(
                           borderRadius: BorderRadius.circular(16),
                           child: CachedNetworkImage(
@@ -104,6 +105,8 @@ class _TopRatedPageViewState extends MomentumState<TopRatedPageView> {
                             },
                           ),
                         ),
+                        Expanded(child: Container(),),
+
                         Text(
                           current.attributes.titles.en ??
                               current.attributes.titles.enJp,

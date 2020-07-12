@@ -46,7 +46,6 @@ class _PlayerPageState extends State<PlayerPage> with RelativeScale {
     var headers = {
       'Referer': 'https://twist.moe/a/${widget.slug}/${widget.ep}'
     };
-    print(headers);
     super.initState();
     _controller =
         VideoPlayerController.network(widget.videoUrl, headers: headers)
@@ -84,6 +83,8 @@ class _PlayerPageState extends State<PlayerPage> with RelativeScale {
                   child: OrientationBuilder(
                     builder: (context, orientation) {
                       bool isPortrait = orientation == Orientation.portrait;
+                      SystemChrome.setEnabledSystemUIOverlays(
+                          isPortrait ? SystemUiOverlay.values : []);
                       return Align(
                         alignment:
                             isPortrait ? Alignment.topCenter : Alignment.center,
@@ -211,19 +212,24 @@ class _PlayerPageState extends State<PlayerPage> with RelativeScale {
                 ),
                 showUI
                     ? Positioned(
-                        child: Container(
-                          color: Colors.black.withOpacity(0.7),
-                          child: Row(
-                            children: [
-                              IconButton(
-                                  icon: Icon(
-                                    Icons.arrow_back,
-                                    color: Colors.white,
-                                  ),
-                                  onPressed: () {
-                                    Navigator.pop(context);
-                                  })
-                            ],
+                        top: -1,
+                        left: -1,
+                        right: -1,
+                        child: SafeArea(
+                          child: Container(
+                            color: Colors.black.withOpacity(0.7),
+                            child: Row(
+                              children: [
+                                IconButton(
+                                    icon: Icon(
+                                      Icons.arrow_back,
+                                      color: Colors.white,
+                                    ),
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    })
+                              ],
+                            ),
                           ),
                         ),
                       )
