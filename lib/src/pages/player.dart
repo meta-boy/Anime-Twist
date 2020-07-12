@@ -9,6 +9,7 @@ import 'package:relative_scale/relative_scale.dart';
 // Package imports:
 import 'package:video_player_header/video_player_header.dart';
 import 'package:time/time.dart';
+import 'package:wakelock/wakelock.dart';
 
 class PlayerPage extends StatefulWidget {
   final String videoUrl;
@@ -57,6 +58,7 @@ class _PlayerPageState extends State<PlayerPage> with RelativeScale {
                 isBuffering = _controller.value.isBuffering;
               });
             });
+
             setState(() {
               whenStarted = DateTime.now();
             });
@@ -68,6 +70,7 @@ class _PlayerPageState extends State<PlayerPage> with RelativeScale {
     super.dispose();
     _controller.dispose();
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+    Wakelock.disable();
   }
 
   @override
@@ -141,10 +144,14 @@ class _PlayerPageState extends State<PlayerPage> with RelativeScale {
                                                 onPressed: () {
                                                   setState(
                                                     () {
-                                                      _controller
-                                                              .value.isPlaying
-                                                          ? _controller.pause()
-                                                          : _controller.play();
+                                                      if (_controller
+                                                          .value.isPlaying) {
+                                                        _controller.pause();
+                                                        Wakelock.disable();
+                                                      } else {
+                                                        _controller.play();
+                                                        Wakelock.enable();
+                                                      }
                                                     },
                                                   );
                                                 },

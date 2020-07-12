@@ -35,7 +35,7 @@ Momentum momentum() {
     appLoader: Splash(),
     controllers: [
       ThemeController(),
-      SearchController()..config(lazy: false),
+      SearchController(),
       FavouriteController(),
       DetailController(),
       MiscController()..config(lazy: false),

@@ -9,7 +9,6 @@ import 'package:relative_scale/relative_scale.dart';
 // Project imports:
 import 'package:anime_twist/src/components/misc/index.dart';
 import 'package:anime_twist/src/components/search/index.dart';
-import 'package:anime_twist/src/pages/settings.dart';
 import 'package:anime_twist/src/utils/index.dart';
 import 'package:anime_twist/src/widgets/index.dart';
 
@@ -153,8 +152,12 @@ class _HomeState extends State<Home> with RelativeScale {
           IconButton(
             icon: Icon(Icons.settings),
             onPressed: () {
-              Navigator.push(
-                  context, CupertinoPageRoute(builder: (_) => Settings()));
+              // Navigator.push(
+              //     context, CupertinoPageRoute(builder: (_) => Settings()));
+              // _miscController.testInit();
+              // print(DateTime(2000)
+              //     .difference(DateTime.now())
+              //     .compareTo(Duration(seconds: 1)));
             },
           )
         ],
