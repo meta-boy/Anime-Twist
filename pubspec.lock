@@ -92,13 +92,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.4.7"
-  edit_distance:
-    dependency: "direct main"
-    description:
-      name: edit_distance
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.4.1"
   encrypt:
     dependency: "direct main"
     description:
@@ -455,6 +448,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.10.2+4"
+  wakelock:
+    dependency: "direct main"
+    description:
+      name: wakelock
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.4+2"
   xdg_directories:
     dependency: transitive
     description:
@@ -463,7 +463,7 @@ packages:
     source: hosted
     version: "0.1.0"
   yaml:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: yaml
       url: "https://pub.dartlang.org"
