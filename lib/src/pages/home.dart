@@ -1,4 +1,6 @@
 // Flutter imports:
+import 'package:anime_twist/src/models/index.dart';
+import 'package:anime_twist/src/models/motd.dart';
 import 'package:anime_twist/src/pages/settings.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -155,7 +157,6 @@ class _HomeState extends State<Home> with RelativeScale {
             onPressed: () {
               Navigator.push(
                   context, CupertinoPageRoute(builder: (_) => Settings()));
-              
             },
           )
         ],
@@ -176,36 +177,58 @@ class _HomeState extends State<Home> with RelativeScale {
           var animeList = _miscController.model.animeList;
           var topRated = _miscController.model.topRated;
           var topAired = _miscController.model.topAiring;
-          // var motd = _miscController.model.motd;
+          var motd = _miscController.model.motd;
           return !_searchController.model.isSearching
               ? CustomScrollView(
                   controller: scrollController,
                   slivers: [
                     SliverToBoxAdapter(
+                      child: !isMotdClosed
+                          ? Dismissible(
+                              onDismissed: (direction) {
+                                setState(() {
+                                  isMotdClosed = true;
+                                });
+                              },
+                              key: ValueKey(motd),
+                              child: Container(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Card(
+                                    color: theme.accent,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: SelectableText.rich(
+                                        TextSpan(
+                                          children: [
+                                            TextSpan(
+                                              text: motd.title + '\n',
+                                              style: TextStyle(
+                                                  fontSize: sy(12),
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.white),
+                                            ),
+                                            TextSpan(
+                                              text: removeAllHtmlTags(
+                                                motd.message,
+                                              ),
+                                              style: TextStyle(
+                                                  fontSize: sy(10),
+                                                  color: Colors.white),
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            )
+                          : SizedBox(),
+                    ),
+                    SliverToBoxAdapter(
                       child: Column(
                         children: [
-                          // isMotdClosed
-                          //     ? Container()
-                          //     : Padding(
-                          //         padding: const EdgeInsets.all(8.0),
-                          //         child: Container(
-                          //           decoration: BoxDecoration(
-                          //               color: theme.accent.withOpacity(0.1),
-                          //               borderRadius:
-                          //                   BorderRadius.circular(16)),
-                          //           child: Stack(
-                          //             children: [
-                          //               Positioned.fill(
-                          //                   child: Column(
-                          //                 children: [
-                          //                   Text(motd.title),
-                          //                   Text(motd.message)
-                          //                 ],
-                          //               ))
-                          //             ],
-                          //           ),
-                          //         ),
-                          //       ),
                           HeadingText(
                               theme: theme, fv: sx(28), text: 'Top Rated'),
                           TopRatedPageView(
@@ -247,10 +270,12 @@ class _HomeState extends State<Home> with RelativeScale {
                       })
                   : Center(
                       child: Container(
-                        height: 10,
-                        width: 20,
-                        color: Colors.white,
-                      ),
+                          child: Text(
+                        '(＞ｍ＜)\n\nOOPS! coudn\'t find that anime',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: theme.accent, fontSize: sy(14),)
+                        
+                      )),
                     );
         },
       ),

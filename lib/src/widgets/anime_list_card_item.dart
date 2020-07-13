@@ -62,24 +62,23 @@ class _AnimeListCardItemState extends State<AnimeListCardItem> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(widget.anime.title.length > 30
-                          ? widget.anime.title.substring(0, 30) + '...'
-                          : widget.anime.title),
-                      Text(
-                        widget.anime.altTitle != null &&
-                                widget.anime.altTitle.length > 30
-                            ? widget.anime.altTitle.substring(0, 30) + '...'
-                            : '',
-                        style: TextStyle(
-                            color: widget.theme.textPrimary.withOpacity(0.5)),
-                      )
-                    ],
-                  ),
                   Expanded(
+                                      child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(widget.anime.title, maxLines: 1, overflow: TextOverflow.ellipsis,),
+                        Text(widget.anime.altTitle ?? '',
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                              color: widget.theme.textPrimary.withOpacity(0.5)),
+                        )
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20.0),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.end,

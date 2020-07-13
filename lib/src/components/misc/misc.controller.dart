@@ -20,8 +20,7 @@ class MiscController extends MomentumController<MiscModel> {
   Future<void> bootstrapAsync() async {
     ApiRepository apiRepository = getService<ConcreteApiRepository>();
 
-
-
+    
     if (DateTime.now().difference(model.lastUpdated).inHours >= 6) {
       var _animeList = await apiRepository.getAllAnime();
 
@@ -42,6 +41,11 @@ class MiscController extends MomentumController<MiscModel> {
           lastUpdated: DateTime.now());
       print('updated');
     } else {
+      try {
+      var _motd = await apiRepository.getMotd();
+
+      model.update(motd: _motd);
+    } catch (e) {}
       print('did not update');
     }
   }

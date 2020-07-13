@@ -104,7 +104,7 @@ class ButtonColor extends Equatable {
 
 
 var indigoPinkLight = AnimeTwistTheme(
-  primary: Colors.indigo,
+  primary: Colors.pink,
   accent: Colors.pink,
   appbarFont: Colors.white,
   textPrimary: Colors.black.withOpacity(0.80),
@@ -131,7 +131,7 @@ var indigoPinkLight = AnimeTwistTheme(
 );
 
 var indigoPinkDark = AnimeTwistTheme(
-  primary: Colors.indigo,
+  primary: Colors.pink,
   accent: Colors.pink,
   appbarFont: Colors.white,
   textPrimary: Colors.white,

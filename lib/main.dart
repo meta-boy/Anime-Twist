@@ -23,7 +23,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
     DevicePreview(
-      enabled: !kReleaseMode,
+      enabled: false,
       builder: (context) => momentum(),
     ),
   );
@@ -78,12 +78,20 @@ class AnimeTwist extends StatelessWidget {
               scaffoldBackgroundColor: theme.bodyBackground,
               textTheme: TextTheme(
                 bodyText1: TextStyle(color: theme.textPrimary),
+                
                 button: TextStyle(color: theme.textPrimary),
                 caption: TextStyle(color: theme.textPrimary),
                 bodyText2: TextStyle(color: theme.textPrimary),
                 subtitle1: TextStyle(color: theme.textPrimary),
                 subtitle2: TextStyle(color: theme.textPrimary),
                 overline: TextStyle(color: theme.textPrimary),
+                headline1: TextStyle(color: theme.textPrimary),
+                headline2: TextStyle(color: theme.textPrimary),
+                headline3: TextStyle(color: theme.textPrimary),
+                headline4: TextStyle(color: theme.textPrimary),
+                headline5: TextStyle(color: theme.textPrimary),
+                headline6: TextStyle(color: theme.textPrimary),
+
               ),
               visualDensity: VisualDensity.adaptivePlatformDensity,
             ),
