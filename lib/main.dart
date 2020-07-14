@@ -23,7 +23,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
     DevicePreview(
-      enabled: false,
+      enabled: !kReleaseMode,
       builder: (context) => momentum(),
     ),
   );

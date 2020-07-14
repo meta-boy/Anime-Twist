@@ -5,14 +5,14 @@ import 'package:flutter/services.dart';
 
 // Package imports:
 import 'package:momentum/momentum.dart';
+import 'package:package_info/package_info.dart';
 import 'package:relative_scale/relative_scale.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 // Project imports:
 import 'package:anime_twist/src/components/theme/index.dart';
 import 'package:anime_twist/src/utils/color.dart';
 import 'package:anime_twist/src/widgets/index.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:package_info/package_info.dart';
 
 class Settings extends StatefulWidget {
   @override

@@ -1,6 +1,4 @@
 // Flutter imports:
-import 'package:anime_twist/src/pages/index.dart';
-import 'package:anime_twist/src/pages/settings.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -11,6 +9,8 @@ import 'package:relative_scale/relative_scale.dart';
 // Project imports:
 import 'package:anime_twist/src/components/misc/index.dart';
 import 'package:anime_twist/src/components/search/index.dart';
+import 'package:anime_twist/src/pages/index.dart';
+import 'package:anime_twist/src/pages/settings.dart';
 import 'package:anime_twist/src/utils/index.dart';
 import 'package:anime_twist/src/widgets/index.dart';
 

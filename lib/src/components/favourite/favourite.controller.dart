@@ -1,9 +1,9 @@
 // Package imports:
-import 'package:anime_twist/src/models/index.dart';
 import 'package:momentum/momentum.dart';
 
 // Project imports:
 import 'index.dart';
+import 'package:anime_twist/src/models/index.dart';
 
 class FavouriteController extends MomentumController<FavouriteModel> {
   @override

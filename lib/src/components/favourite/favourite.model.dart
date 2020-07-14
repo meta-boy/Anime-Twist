@@ -1,11 +1,9 @@
-import 'dart:convert';
-
 // Package imports:
-import 'package:anime_twist/src/models/index.dart';
 import 'package:momentum/momentum.dart';
 
 // Project imports:
 import 'index.dart';
+import 'package:anime_twist/src/models/index.dart';
 
 class FavouriteModel extends MomentumModel<FavouriteController> {
   FavouriteModel(FavouriteController controller, {this.favourites})

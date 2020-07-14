@@ -1,14 +1,15 @@
 // Flutter imports:
 
+// Flutter imports:
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:relative_scale/relative_scale.dart';
 
 // Package imports:
-import 'package:video_player_header/video_player_header.dart';
+import 'package:relative_scale/relative_scale.dart';
 import 'package:time/time.dart';
+import 'package:video_player_header/video_player_header.dart';
 import 'package:wakelock/wakelock.dart';
 
 class PlayerPage extends StatefulWidget {

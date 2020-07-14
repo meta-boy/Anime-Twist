@@ -1,13 +1,17 @@
+// Flutter imports:
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:momentum/momentum.dart';
+
+// Project imports:
+import 'details.dart';
 import 'package:anime_twist/src/components/favourite/index.dart';
 import 'package:anime_twist/src/components/search/index.dart';
 import 'package:anime_twist/src/models/index.dart';
 import 'package:anime_twist/src/widgets/custom_theme.dart';
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:momentum/momentum.dart';
-
-import 'details.dart';
 
 class Favourites extends StatefulWidget {
   @override
