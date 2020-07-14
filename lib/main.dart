@@ -8,7 +8,6 @@ import 'package:momentum/momentum.dart';
 
 // Project imports:
 import '.env.dart';
-import 'src/components/detail/detail.controller.dart';
 import 'src/components/favourite/favourite.controller.dart';
 import 'src/components/misc/misc.controller.dart';
 import 'src/components/search/search.controller.dart';
@@ -37,7 +36,6 @@ Momentum momentum() {
       ThemeController(),
       SearchController(),
       FavouriteController(),
-      DetailController(),
       MiscController()..config(lazy: false),
     ],
     services: [

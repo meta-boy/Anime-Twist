@@ -6,10 +6,6 @@ class FavouriteElement {
 
   FavouriteElement(this.id, this.posterURl, this.title);
 
- 
-
-
-
   Map<String, dynamic> toJson() {
     return {
       'id': id,
