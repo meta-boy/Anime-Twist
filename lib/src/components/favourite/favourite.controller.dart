@@ -21,6 +21,10 @@ class FavouriteController extends MomentumController<FavouriteModel> {
     model.update(favourites: newMap);
   }
 
+  void clear() {
+    model.update(favourites: <String, FavouriteElement>{});
+  }
+
   bool isFav(String id) {
     if (model.favourites.containsKey(id)) {
       return true;
