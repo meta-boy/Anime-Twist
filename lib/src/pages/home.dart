@@ -1,6 +1,5 @@
 // Flutter imports:
-import 'package:anime_twist/src/models/index.dart';
-import 'package:anime_twist/src/models/motd.dart';
+import 'package:anime_twist/src/pages/index.dart';
 import 'package:anime_twist/src/pages/settings.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -83,12 +82,13 @@ class _HomeState extends State<Home> with RelativeScale {
               if (searchModel.isSearching) {
                 return TextFormField(
                   initialValue: searchModel.query,
+                  
                   onChanged: (value) {
                     _searchController.search(value);
                   },
                   style: TextStyle(
                     fontSize: sy(12),
-                    color: theme.appbarFont,
+                    color: theme.accent,
                   ),
                   decoration: InputDecoration(
                     hintText: 'Search ...',
@@ -153,12 +153,19 @@ class _HomeState extends State<Home> with RelativeScale {
             },
           ),
           IconButton(
+            icon: Icon(Icons.favorite),
+            onPressed: () {
+              Navigator.push(
+                  context, CupertinoPageRoute(builder: (_) => Favourites()));
+            },
+          ),
+          IconButton(
             icon: Icon(Icons.settings),
             onPressed: () {
               Navigator.push(
                   context, CupertinoPageRoute(builder: (_) => Settings()));
             },
-          )
+          ),
         ],
       ),
       floatingActionButton: !isTop
@@ -270,12 +277,12 @@ class _HomeState extends State<Home> with RelativeScale {
                       })
                   : Center(
                       child: Container(
-                          child: Text(
-                        '(＞ｍ＜)\n\nOOPS! coudn\'t find that anime',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: theme.accent, fontSize: sy(14),)
-                        
-                      )),
+                          child: Text('(＞ｍ＜)\n\nOOPS! coudn\'t find that anime',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: theme.accent,
+                                fontSize: sy(14),
+                              ))),
                     );
         },
       ),

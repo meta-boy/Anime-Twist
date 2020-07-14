@@ -85,12 +85,7 @@ class AnimeTwist extends StatelessWidget {
                 subtitle1: TextStyle(color: theme.textPrimary),
                 subtitle2: TextStyle(color: theme.textPrimary),
                 overline: TextStyle(color: theme.textPrimary),
-                headline1: TextStyle(color: theme.textPrimary),
-                headline2: TextStyle(color: theme.textPrimary),
-                headline3: TextStyle(color: theme.textPrimary),
-                headline4: TextStyle(color: theme.textPrimary),
-                headline5: TextStyle(color: theme.textPrimary),
-                headline6: TextStyle(color: theme.textPrimary),
+                
 
               ),
               visualDensity: VisualDensity.adaptivePlatformDensity,

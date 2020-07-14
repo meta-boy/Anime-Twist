@@ -7,3 +7,4 @@ export 'motd.dart';
 export 'user.dart';
 export 'source.dart';
 export 'kitsu_resource.dart';
+export 'favourite_elment.dart';

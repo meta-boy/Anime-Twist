@@ -1,4 +1,5 @@
 // Flutter imports:
+import 'package:anime_twist/src/components/favourite/favourite.controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -30,6 +31,8 @@ class Details extends StatefulWidget {
 
 class _DetailsState extends MomentumState<Details> with RelativeScale {
   SearchController _searchController;
+  FavouriteController _favouriteController;
+  
   String imgUrl;
   AnimeDetail animeDetails;
   ScrollController scrollController = ScrollController();
@@ -44,6 +47,8 @@ class _DetailsState extends MomentumState<Details> with RelativeScale {
   @override
   void initMomentumState() {
     _searchController = Momentum.controller<SearchController>(context);
+    _favouriteController = Momentum.controller<FavouriteController>(context);
+
     if (widget.imgUrl == null) {
       _searchController
           .getKitsuData(widget.anime.hbId.toString())
@@ -199,13 +204,61 @@ class _DetailsState extends MomentumState<Details> with RelativeScale {
                                             fontSize: sx(16),
                                           ),
                                         ),
-                                        Text(
-                                          '\nSeason ' +
-                                              animeDetails.season.toString(),
-                                          style: TextStyle(
-                                            color: theme.accent,
-                                            fontSize: sx(16),
-                                          ),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              '\nSeason ' +
+                                                  animeDetails.season
+                                                      .toString(),
+                                              style: TextStyle(
+                                                color: theme.accent,
+                                                fontSize: sx(16),
+                                              ),
+                                            ),
+                                            MomentumBuilder(
+                                                controllers: [
+                                                  FavouriteController
+                                                ],
+                                                builder: (context, snapshot) {
+                                                  var anime = widget.anime;
+
+                                                  var isFav =
+                                                      _favouriteController
+                                                          .isFav(anime.hbId
+                                                              .toString());
+                                                  print(isFav);
+                                                  var favElement =
+                                                      FavouriteElement(
+                                                          anime.hbId.toString(),
+                                                          imgUrl,
+                                                          anime.title);
+                                                  if (isFav) {
+                                                    return IconButton(
+                                                        icon: Icon(
+                                                            Icons.favorite),
+                                                        color: theme.accent,
+                                                        onPressed: () {
+                                                          _favouriteController
+                                                              .update(
+                                                                  favElement);
+                                                        });
+                                                  } else {
+                                                    return IconButton(
+                                                        icon: Icon(Icons
+                                                            .favorite_border),
+                                                        color: theme.accent,
+                                                        onPressed: () {
+                                                          _favouriteController
+                                                              .update(
+                                                                  favElement);
+                                                        });
+                                                  }
+                                                })
+                                          ],
                                         )
                                       ],
                                     ),
